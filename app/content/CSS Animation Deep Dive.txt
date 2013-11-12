@@ -1,0 +1,124 @@
+CSS Animation Deep Dive
+
+Learn some awesome CSS with me.
+
+Goal:
+
+Those fancy ass sliders with animated portions of HTML in each slide.
+
+Use-case:
+
+The big wigs have a new page and want an attractive slider/rotator/whatevertheycallit at the top of the page. You want to show off your l33t skills so you want to make it a little more interactive.
+
+What we are going to need:
+HTML5 - For layout
+CSS3 - For animations
+JavaScript - Controlling when animations start/stop
+Digital Assets - Pretty things people like
+
+Getting Dirty:
+
+Let's start small and tackle problems as they come. Let's start with a single slide so we can focus on the animations. After that we will throw a second slide in and things will get tricky with controlling when the animations need to start.
+
+<div class="slide-container">
+	<div class="slide">
+	</div>
+</div> 
+
+CSS Transition: 
+
+This is used when CSS PROPERTIES CHANGE. So the propertie TRANSITIONS to the new propertie. For a long time I just used them because I know that I could animate a propert, like scale, but its a good thing to note that its looking for PROPERTY changes to transition.
+
+Example :
+
+ - Give the element a CSS transition property 
+
+ 	transition: 
+
+ -	then give the property you wish to transform and how long tha transition should take. 
+
+ 	width 1s; 
+
+ What this will do, anytime the WIDTH property of our element changes, it will go to the new property over 1 second.
+
+
+		.example1 {
+		    background:#999999;
+		    width:300px;
+
+		    -webkit-transition: width 1s;
+		}
+
+
+		.example1:hover {
+		    width:500px;
+		}
+
+
+Of course you will want to animate different properties at maybe different times. Just seperate by commas. Give the property and then the time:
+
+
+		h2 {
+		    background:#999999;
+		    width:300px;
+		    height:300px;
+		    border-radius:50%;
+
+		    -webkit-transition: width 1s, height .5s, border-radius 3s ;
+		}
+
+
+		h2:hover {
+		    width:500px;
+		    width:400px;
+		    height:400px;
+		    border-radius: 10%
+		}
+
+Here you can see the border radius takes the longest to complete as it is transitioning over 3 seconds.
+
+At this point it is good to note the transition sub-propertiesand the order that you can give. Here is a reference from MDN:
+
+		 transition: <property> <duration> <timing-function> <delay>
+
+So far we have only touched the <property> and <duration>. The other two, <timing function> & <delay> are pretty self-evident.
+
+	-Timing Function -> The calcuation of the timing between states. There is a great cheat sheet here -> http://easings.net/
+
+	-Delay  ->  Delays the start of the animation.
+
+
+Now most people end up using this transition with TRANSFORM and you see TRANSITION and TRANSFORM together a lot..
+
+Remember that TRANSFORM is just another CSS property. Thats why you typically see 
+
+Example: 
+
+
+For a complete list of what you can transform. Check out the MDN -> https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+
+Thats really it on transitions. Remember that this happens when that property gets changed. We can alter those properties VIA JAVASCRIPT if we want and not really on HOVER events.
+
+Example 4:
+
+
+
+You can see here that JavaScript changes the property and since CSS tells the element to transition when that property changes it takes 1 second for the element's width to change.
+
+Animations
+
+CSS Animations are related to transitions, as they are really just tranisitions that happen immediately, where you can set keyframes for specific properties during specific times of the animation. 
+
+Remember that transitions are when a CSS property is changed. Animations are just ran. We will get into controlling WHEN the animations run in a bit.
+
+The setup:
+
+We will need an <element> with css a few of the CSS-Animation properties.
+
+All CSS-Animation properties over at MDN.
+https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_animations
+
+We will start by using only the Animation-Duration and the necesarry Animation-Name property.
+
+Example 5:
+

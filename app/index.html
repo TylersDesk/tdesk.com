@@ -3,31 +3,64 @@
 <head>
   <meta charset="utf-8">
   <title>My AngularJS App</title>
-  <link rel="stylesheet" href="css/app.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
   <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet/less" href="css/main.less"/>
 </head>
-<body>
-  <div class="page-cont top-cont">
-  <div class="container">
-    <nav>
-      <div class="row">
-        <div class="my-image col-sm-4">
-          <img class="my-avatar" src="img/myAvatar.png">
+<body ng-controller="navCtrl">
+  <div class="top-cont">
+    <div class="container">
+      <nav>
+        <div class="row visible-xs">
+          <div class="col-xs-12">
+            <span class="glyphicon glyphicon-align-justify"></span>
+          </div>
         </div>
-        <div class="col-sm-8">
-          Hi
+        <div class="row hidden-xs">
+          <div class="col-sm-7">
+            Tyler Maynard
+          </div>
+          <div class="col-sm-5">
+            <div ng-controller="scoreCtrl">
+              <score score="tscore"></score>
+              <button class="btn btn-info" ng-click="addScore(400)"</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
-  </div>  
+      </nav>
+    </div>  
   </div>
 
-  <div class="page-cont">
-    <div class="container">
-      <div ng-view></div>
-      <div>Angular seed app: v<span app-version></span></div>
+<welcome message="currentview">
+</welcome>
+
+<div class="page-cont">
+  <div class="container">
+    <div class="row cats">
+      <div class="col-xs-4" ng-click="loadView('work')">
+        <span class="glyphicon glyphicon-folder-open"></span><br />
+                <h2>Work</h2>
+      </div>
+      <div class="col-xs-4" ng-click="loadView('bio')">
+        <span class="glyphicon glyphicon-user"></span><br />
+                <h2>Bio</h2>
+      </div>
+      <div class="col-xs-4" ng-click="loadView('curiosity')">
+        <span class="glyphicon glyphicon-heart"></span><br />
+                <h2>Curiosity</h2>
+      </div>
     </div>
   </div>
+</div>
+
+<div ng-view></div>
+
+<footer>
+  <div class="container">
+    footer here.
+  </div>
+</footer>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
@@ -39,5 +72,6 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+  <script src="lib/less/less.js"></script>
 </body>
 </html>
