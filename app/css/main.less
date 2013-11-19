@@ -33,6 +33,11 @@
 
 }
 
+.center {text-align:center;}
+.roundtest {border-radius:10px; box-shadow:3px 6px 0px #525252}
+.roundtest2 {border-radius:50%;}
+.roundtest3 {border-radius:3px; border:1px dotted @white;}
+
 
 ///////////////////////////
 //  
@@ -100,8 +105,18 @@ nav {
 }
 
 footer {
+  margin-top:20px;
   background:@main;
   color:@white;
+  ul {
+    marign:0;
+    padding:0;
+
+    li{display:inline-block; padding:0px 9px;}
+  }
+  span{
+    font-size: 9px;
+  }
 }
 
 
@@ -249,7 +264,7 @@ border-top:1px solid #006154;
 .transform;
 }
 
-.dissapear {padding:0px;}
+.dissapear {paddin:0px;}
 
 @-webkit-keyframes close {
   0%{
@@ -267,3 +282,115 @@ border-top:1px solid #006154;
   100%{
     }
 }
+
+.reveal-animation {
+  background: #2b2b2b;
+  box-shadow: inset -5px 0px 22px -8px #000000;
+  overflow:hidden;
+  border:1px solid #006154;
+  padding: 15px 10px;
+}
+
+
+.reveal-animation.ng-enter,
+.reveal-animation.ng-leave.ng-leave-active {
+
+ 
+ /* The animation preparation code */
+ max-height:0px;
+ padding:0 10px;
+-webkit-transition: .25s ease-in all; /* Safari/Chrome */
+  transition: .25s ease-in all; /* All other modern browsers and IE10+ */
+  opacity:0;
+
+}
+ 
+/*
+ Keep in mind that you want to combine both CSS
+ classes together to avoid any CSS-specificity
+ conflicts
+*/
+
+
+.reveal-animation.ng-enter.ng-enter-active, 
+.reveal-animation.ng-leave {
+
+ /* The animation code itself */
+ opacity: 1;
+ max-height:4000px;
+ padding: 15px 10px;
+ -webkit-transition: .2s ease-out all; /* Safari/Chrome */
+  transition: .2s ease-out all; /* All other modern browsers and IE10+ */
+  -webkit-transition-delay:.3s;
+  transition-delay:.3s;
+  opacity:1;
+}
+
+
+
+
+/////// WORK TILES
+
+ .workcont {
+    margin-top:10px;
+
+    .center {
+      text-align:center;
+    }
+
+    .col-sm-8 {}
+    .col-sm-12 {
+      text-align:left;
+    
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style:none;
+
+        li.title {
+          background:@hghlt;
+          padding:3px 0px 0 3px;
+        }
+
+        li.info {
+          font-size:8px;
+          text-align: center;
+          padding-bototm:5px;
+        }
+
+
+
+
+      }
+
+    }
+
+  }
+
+.row.work-tiles {
+  background:@white;
+  color: #2b2b2b;
+  text-align:center;
+
+  h3 {
+    font-size: 20px;
+    margin: 0;
+    padding: 6px 0;
+  }
+
+  .col-xs-3 {
+    padding:4px 0;
+    .transform;
+  }
+
+  .col-xs-3.navhighlight {
+    background:@hghlt;
+    color:@white;
+  }
+
+  .col-xs-3:hover {
+    background: @hghlt;
+  }
+}
+
+.center {text-align:center;}

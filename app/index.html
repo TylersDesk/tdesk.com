@@ -2,6 +2,7 @@
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My AngularJS App</title>
   <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
@@ -19,12 +20,11 @@
         </div>
         <div class="row hidden-xs">
           <div class="col-sm-7">
-            Tyler Maynard
+            <h1>TylersDesk.com</h1>
           </div>
           <div class="col-sm-5">
             <div ng-controller="scoreCtrl">
-              <score score="tscore"></score>
-              <button class="btn btn-info" ng-click="addScore(400)"</button>
+              <score score="score"></score>
             </div>
           </div>
         </div>
@@ -54,11 +54,20 @@
   </div>
 </div>
 
-<div ng-view></div>
+<div class="container">
+<div class="reveal-animation" ng-view></div>
+</div>
 
 <footer>
-  <div class="container">
-    footer here.
+  <div class="container center">
+    <ul>
+      <li>Twitter</li>
+      <li>LinkedIn</li>
+      <li>GitHub</li>
+      <li>Facebook</li>
+    </ul>
+    <span>&copy;2013 TylersDesk.com&trade;</span>
+    
   </div>
 </footer>
 
@@ -66,6 +75,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   -->
   <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-animate.js"></script>
   <script src="lib/angular/angular-route.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>

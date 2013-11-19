@@ -1,0 +1,68 @@
+<!-- <div class="row">
+	<div class="col-xs-12">
+		<h3>Objective: Master Web Development</h3>
+		<p>
+			I have recently switched gears to focus strictly on web development.
+		</p>
+	</div>
+</div> -->
+<div class="row work-tiles">
+	<div class="col-xs-3" ng-click="showWork('web')" ng-class="{'navhighlight': displaywork=='web'}">
+		<h3>Web</h3>
+	</div>
+	<div class="col-xs-3" ng-click="showWork('photo')" ng-class="{'navhighlight': displaywork=='photo'}">
+		<h3>Photo</h3>
+	</div>
+	<div class="col-xs-3" ng-click="showWork('motion')" ng-class="{'navhighlight': displaywork=='motion'}">
+		<h3>Launches</h3>
+	</div>
+	<div class="col-xs-3" ng-click="showWork('creative')" ng-class="{'navhighlight': displaywork=='creative'}">
+		<h3>Creative</h3>
+	</div>
+</div>
+
+
+
+<div class="row">
+<div ng-switch="displaywork">
+	<div ng-switch-when="web">
+		<div class="row workcont" ng-repeat="workitem in workcat.web">
+			<div class="col-md-8">
+				<img ng-src="http://placehold.it/768x300" class="img-responsive" />
+			</div>
+			<div class="col-md-4">
+				<ul class="portfolio-data">
+					<li class="title">{{workitem.name}}</li>
+					<li class="info">{{workitem.desc}}</li>
+					<li>{{workitem.date}}</li>
+					<li>{{workitem.thumb}}</li>
+					<li>{{workitem.skills}}</li>
+					<li>{{workitem.link}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div ng-switch-when="photo" class="row">
+		<div class="workcont" ng-repeat="workitem in workcat.photo">
+			<div class="col-sm-4 center">
+				<img ng-src="http://placehold.it/1024x768" class="img-responsive" />
+			</div>
+		</div>
+	</div>
+	<div ng-switch-when="motion">
+				<div class="col-xs-12 center workcont">
+			<img src="http://placehold.it/420x420" class="roundtest2">
+		</div>
+	</div>
+	<div ng-switch-when="creative">
+				<div class="col-xs-12 center workcont">
+			<img src="http://placehold.it/420x294" class="roundtest3">
+		</div>
+	</div>
+	<div ng-switch-default></div>
+</div>
+</div>
+
+<div class="row">
+
+</div>

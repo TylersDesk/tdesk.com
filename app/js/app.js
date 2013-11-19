@@ -3,6 +3,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
   'ngRoute',
+  'ngAnimate',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
@@ -10,11 +11,11 @@ angular.module('myApp', [
 ]).config([
   '$routeProvider',
     function ($routeProvider) {
-      $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'});
-      $routeProvider.when('/bio', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-      $routeProvider.when('/work', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-      $routeProvider.when('/curiosity', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-      $routeProvider.otherwise({redirectTo: '/home'});
+      $routeProvider.when('/', { controller: 'HomeCtrl'});
+      $routeProvider.when('/bio', {templateUrl: 'partials/bio.html', controller: 'MyCtrl1'});
+      $routeProvider.when('/work', {templateUrl: 'partials/work.html', controller: 'workCtrl'});
+      $routeProvider.when('/curiosity', {templateUrl: 'partials/curiosity.html', controller: 'MyCtrl1'});
+      $routeProvider.otherwise({redirectTo: '/'});
     }]
 );
 

@@ -3,49 +3,28 @@
 /* Controllers */
 
 angular.module('myApp.controllers', []).
-controller('scoreCtrl', ['$scope',
-  function($scope) {
-    $scope.tscore = 0;
+controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService) {
+    
+    //Both of the functions below talk to the TRUTH of the data.
 
+    //Score Watching Function
+    $scope.$watch(function () {
+      return scoreService.getScore();
+    }, function (score) {
+      $scope.score = score;
+      //console.log(score);
+    });
+
+    //Score Adding Function
     $scope.addScore = function(plusNum) {
-      //Get the new number
-      var addThis = plusNum;
-      $scope.tscore = $scope.tscore + plusNum;
-      //console.log($scope);
+      scoreService.setScore(plusNum);
     }
-
-    //    var plusScore =  function($scope) {
-    //        $scope.tscore++;
-    //         //$scope.$apply();
-    //      }
-
-    //    setInterval(plusScore($scope), 100);
-
-    // //   function countController($scope){
-
-
-
-    //     var timer = setInterval(function(){
-    //         $scope.tscore++;
-    //         $scope.$apply();
-    //         console.log($scope.countDown);
-    //     }, 50);
-
-    //     if($scope.tscore == 1000)
-    //     {
-    //      clearInterval(timer);
-    //     }
-
-    // }
-
-    //countController($scope);
-
   }
 ])
   .controller('navCtrl', ['$scope', '$location',
     function($scope, $location) {
 
-      $scope.currentview = "Welcome, what brings you to my site?";
+      $scope.currentview = "Welcome to my digital dojo, what brings you friend?";
 
       $scope.loadView = function (view) {
         console.log('Loading View: ' + view);
@@ -59,4 +38,24 @@ controller('scoreCtrl', ['$scope',
     function() {
       console.log('Firing Home');
     }
-  ]);
+  ])
+  .controller('workCtrl', ['$scope', 'workService', function($scope,workService) {
+        
+      workService.getWork();
+
+      $scope.$watch( function () {
+        console.log('watching function');
+        return workService.getItem();
+      }, function (workcat) {
+        console.log('when does this fire? only on change?');
+        $scope.workcat = workcat;
+        console.log($scope);
+      });
+
+      $scope.showWork = function(workItem) {
+        $scope.displaywork = workItem
+      }
+      //$scope.displaywork = 'web';
+      
+
+  }]);

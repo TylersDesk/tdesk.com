@@ -69,12 +69,10 @@ angular.module('myApp.directives', []).
         console.log($scope);
         iElm.html($scope.message);
         $scope.$watch('message', function(newValue, oldValue) {
-                if (newValue) {
+                if (newValue)
                   console.log("I see a data change!");
                   iElm.addClass('dissapear');
                   iElm.html($scope.message);
-                  iElm.removeClass('dissapear');
-                }
             }, true);
         //console.log($scope);
       }
