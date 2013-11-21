@@ -20,7 +20,7 @@
 }
 
 .scale {
-  -webkit-transform:scale(1.1);
+  -webkit-transform:scale(1.0);
 }
 
 .transform {
@@ -49,7 +49,7 @@
 
 ///////////////////////////
 //  
-//    BootStrap Overwrites
+//    Custom Code
 //
 
 body{
@@ -127,6 +127,40 @@ footer {
 
 h1 {margin:0; padding:0; font-size: 20px;}
 
+a {color:@white;}
+
+span.c0 {
+  color:#90EE03;
+   -webkit-animation-name:fadecolorneon;
+  -webkit-animation-duration:2s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay:0s;
+
+
+}
+span.c1 {color:#c2c2c2;
+  -webkit-animation-name:fadecolorgray;
+  -webkit-animation-duration:2.5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay:0s;
+}
+span.c2 {color:@hghlt;
+  -webkit-animation-name:fadecolorhghlt;
+  -webkit-animation-duration:3s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay:0s;
+}
+span.c3 {color:#c2c2c2;}
+
+span.father{
+  font-size: 18px; color:#E44E4E;
+  -webkit-animation-name:heartbeat;
+  -webkit-animation-duration:1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+
+}
+
 ///////////////////////////
 //  
 //    View Styling
@@ -199,33 +233,6 @@ ul.latest {
 }
 
 
-/*   Media Queries */
-
-@media (max-width:767px)  {
-  nav {
-    text-align: center;
-
-    .col-sm-7 {
-      font-size:20px;
-    }
-
-    .col-sm-5 {
-      text-align: center;
-    }
-  }
-  .page-cont {
-    .container {
-      padding-right: 0px;
-      padding-left: 0px;
-      margin-right: auto;
-      margin-left: auto;
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  nav {text-align: left;}
-}
 
 ///////////////////////////
 //  
@@ -283,48 +290,6 @@ border-top:1px solid #006154;
     }
 }
 
-.reveal-animation {
-  background: #2b2b2b;
-  box-shadow: inset -5px 0px 22px -8px #000000;
-  overflow:hidden;
-  border:1px solid #006154;
-  padding: 15px 10px;
-}
-
-
-.reveal-animation.ng-enter,
-.reveal-animation.ng-leave.ng-leave-active {
-
- 
- /* The animation preparation code */
- max-height:0px;
- padding:0 10px;
--webkit-transition: .25s ease-in all; /* Safari/Chrome */
-  transition: .25s ease-in all; /* All other modern browsers and IE10+ */
-  opacity:0;
-
-}
- 
-/*
- Keep in mind that you want to combine both CSS
- classes together to avoid any CSS-specificity
- conflicts
-*/
-
-
-.reveal-animation.ng-enter.ng-enter-active, 
-.reveal-animation.ng-leave {
-
- /* The animation code itself */
- opacity: 1;
- max-height:4000px;
- padding: 15px 10px;
- -webkit-transition: .2s ease-out all; /* Safari/Chrome */
-  transition: .2s ease-out all; /* All other modern browsers and IE10+ */
-  -webkit-transition-delay:.3s;
-  transition-delay:.3s;
-  opacity:1;
-}
 
 
 
@@ -394,3 +359,192 @@ border-top:1px solid #006154;
 }
 
 .center {text-align:center;}
+
+
+.myavatar {
+  background:url(../img/myAvatar.png);
+  background-size:cover;
+width: 150px;
+height: 150px;
+border-radius: 50%;
+margin:0 auto;
+}
+
+
+
+.work-container {
+  position:relative;
+  overflow:hidden;
+}
+
+
+.intro h1 {
+  margin-top: 7px;
+border-bottom: 1px solid #fefefe;
+position: relative;
+top: 17px;
+max-width: 359px;
+padding-bottom: 7px;
+text-align: left;
+}
+
+
+
+
+.reveal-animation-container {
+  background: #2b2b2b;
+  box-shadow: inset -5px 0px 22px -8px #000000;
+  overflow:hidden;
+  border-top:1px solid #006154;
+  border-bottom:1px solid #006154;
+  padding: 15px 10px;
+}
+
+
+.reveal-animation.ng-enter,
+.reveal-animation.ng-leave {
+
+ 
+position:relative;
+}
+
+.reveal-animation.ng-enter {
+max-height:1px; opacity: 0; visibility: hidden; top: -10px; transition-duration: 200ms, 200ms, 200ms, 0; transition-property: max-height, opacity, top, visibility; transition-delay: 0, 0, 0, 200ms;
+}
+
+.reveal-animation.ng-enter.ng-enter-active {
+ max-height:400px; opacity: 1; visibility: visible; top: 0px; transition-duration: 200ms, 200ms, 200ms, 0; transition-property: max-height, opacity, top, visibility; transition-delay: 200ms, 200ms, 200ms, 0;
+}
+
+
+.reveal-animation.ng-leave {
+  visibility: hidden; transition-duration: 50ms; transition-property:visability; transition-delay: 0;
+}
+
+.default { opacity: 0; visibility: hidden; top: -10px; transition-duration: 200ms, 200ms, 0; transition-property: opacity, top, visibility; transition-delay: 0, 0, 200ms; }
+.hidden { opacity: 1; visibility: visible; top: 0px; transition-duration: 200ms, 200ms, 0; transition-property: opacity, top, visibility; transition-delay: 200ms, 200ms, 0; }
+
+.my-switch-container {
+  position:relative;
+  height:500px;
+}
+
+.my-switch-animation.ng-enter,
+.my-switch-animation.ng-leave {
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+}
+
+.my-switch-animation.ng-enter {
+  left:100%;
+}
+
+.my-switch-animation.ng-leave,
+.my-switch-animation.ng-enter.ng-enter-active {
+  left:0;
+}
+
+.my-switch-animation.ng-leave.ng-leave-active {
+  left:-100%;
+}
+
+@-webkit-keyframes heartbeat {
+  from {
+     -webkit-transform:scale(1.0);
+  }
+  50% {
+    -webkit-transform:scale(1.2);
+  }
+  to {
+     -webkit-transform:scale(1.0);
+  }
+}
+
+@-webkit-keyframes fadecolorneon {
+  from {
+    color:#fefefe;
+  }
+  90%{
+    color:#fefefe;
+  }
+  to {
+    color:#90EE03;
+  }
+}
+
+@-webkit-keyframes fadecolorgray {
+  from {
+    color:#fefefe;
+  }
+  94%{
+    color:#fefefe;
+  }
+  to {
+    color:#c2c2c2;
+  }
+}
+
+@-webkit-keyframes fadecolorhghlt {
+  from {
+    color:#fefefe;
+  }
+  95%{
+    color:#fefefe;
+  }
+  to {
+    color:@hghlt;
+  }
+}
+
+
+
+
+
+
+
+/*   Media Queries */
+
+@media (max-width:767px)  {
+  nav {
+    text-align: center;
+
+    .col-sm-7 {
+      font-size:20px;
+    }
+
+    .col-sm-5 {
+      text-align: center;
+    }
+  }
+  .page-cont {
+    .container {
+      padding-right: 0px;
+      padding-left: 0px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  .intro {
+    text-align:center;
+
+    h1 {
+      text-align: center;
+      max-width: 100%;
+      margin-bottom: 35px;
+      padding-bottom: 16px;
+    }
+  }
+
+  
+}
+
+@media (min-width: 768px) {
+  nav {text-align: left;}
+}

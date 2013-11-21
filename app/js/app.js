@@ -11,10 +11,10 @@ angular.module('myApp', [
 ]).config([
   '$routeProvider',
     function ($routeProvider) {
-      $routeProvider.when('/', { controller: 'HomeCtrl'});
-      $routeProvider.when('/bio', {templateUrl: 'partials/bio.html', controller: 'MyCtrl1'});
+      $routeProvider.when('/', { templateUrl: 'partials/home.html', controller: 'HomeCtrl'});
+      $routeProvider.when('/bio', {templateUrl: 'partials/bio.html', controller: 'bioCtrl'});
       $routeProvider.when('/work', {templateUrl: 'partials/work.html', controller: 'workCtrl'});
-      $routeProvider.when('/curiosity', {templateUrl: 'partials/curiosity.html', controller: 'MyCtrl1'});
+      $routeProvider.when('/curiosity', {templateUrl: 'partials/curiosity.html', controller: 'HomeCtrl'});
       $routeProvider.otherwise({redirectTo: '/'});
     }]
 );

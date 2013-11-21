@@ -6,6 +6,10 @@
 		</p>
 	</div>
 </div> -->
+
+<input ng-model="search">
+<h4>{{search}}</h4>
+
 <div class="row work-tiles">
 	<div class="col-xs-3" ng-click="showWork('web')" ng-class="{'navhighlight': displaywork=='web'}">
 		<h3>Web</h3>
@@ -22,10 +26,9 @@
 </div>
 
 
-
 <div class="row">
 <div ng-switch="displaywork">
-	<div ng-switch-when="web">
+	<div ng-switch-when="web" class="reveal-animation">
 		<div class="row workcont" ng-repeat="workitem in workcat.web">
 			<div class="col-md-8">
 				<img ng-src="http://placehold.it/768x300" class="img-responsive" />

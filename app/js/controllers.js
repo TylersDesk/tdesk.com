@@ -21,41 +21,46 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
     }
   }
 ])
-  .controller('navCtrl', ['$scope', '$location',
-    function($scope, $location) {
+.controller('navCtrl', ['$scope', '$location',
+  function($scope, $location) {
 
-      $scope.currentview = "Welcome to my digital dojo, what brings you friend?";
+    $scope.currentview = "Welcome to my digital dojo, what brings you friend?";
 
-      $scope.loadView = function (view) {
-        console.log('Loading View: ' + view);
-        $scope.currentview = view;
-        $location.path($scope.currentview); // path not hash
-      }
-
+    $scope.loadView = function (view) {
+      console.log('Loading View: ' + view);
+      $scope.currentview = view;
+      $location.path($scope.currentview); // path not hash
     }
-  ])
-  .controller('HomeCtrl', [
-    function() {
-      console.log('Firing Home');
-    }
-  ])
-  .controller('workCtrl', ['$scope', 'workService', function($scope,workService) {
-        
-      workService.getWork();
 
-      $scope.$watch( function () {
-        console.log('watching function');
-        return workService.getItem();
-      }, function (workcat) {
-        console.log('when does this fire? only on change?');
-        $scope.workcat = workcat;
-        console.log($scope);
-      });
-
-      $scope.showWork = function(workItem) {
-        $scope.displaywork = workItem
-      }
-      //$scope.displaywork = 'web';
+  }
+])
+.controller('HomeCtrl', [
+  function() {
+    console.log('Firing Home');
+  }
+])
+.controller('workCtrl', ['$scope', 'workService', function($scope,workService) {
       
+    workService.getWork();
 
-  }]);
+    $scope.$watch( function () {
+      console.log('watching function');
+      return workService.getItem();
+    }, function (workcat) {
+      console.log('when does this fire? only on change?');
+      $scope.workcat = workcat;
+      console.log($scope);
+    });
+
+    $scope.showWork = function(workItem) {
+      $scope.displaywork = workItem
+    }
+    //$scope.displaywork = 'web';
+    
+
+}])
+.controller('bioCtrl', [ function() {
+  console.log('Firing Bio Ctrl');
+  d3.select(".bio-container").append("p").text("New paragraph!");
+
+}]);

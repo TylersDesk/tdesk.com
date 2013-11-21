@@ -10,17 +10,17 @@
   <link rel="stylesheet/less" href="css/main.less"/>
 </head>
 <body ng-controller="navCtrl">
-  <div class="top-cont">
+ <div class="top-cont">
     <div class="container">
       <nav>
         <div class="row visible-xs">
           <div class="col-xs-12">
-            <span class="glyphicon glyphicon-align-justify"></span>
+            <a href="#"><span class="glyphicon glyphicon-align-justify"></span></a>
           </div>
         </div>
         <div class="row hidden-xs">
           <div class="col-sm-7">
-            <h1>TylersDesk.com</h1>
+            <h1><a href="#">TylersDesk.com</a></h1>
           </div>
           <div class="col-sm-5">
             <div ng-controller="scoreCtrl">
@@ -32,8 +32,8 @@
     </div>  
   </div>
 
-<welcome message="currentview">
-</welcome>
+<!-- <welcome message="currentview">
+</welcome> -->
 
 <div class="page-cont">
   <div class="container">
@@ -54,8 +54,8 @@
   </div>
 </div>
 
-<div class="container">
-<div class="reveal-animation" ng-view></div>
+<div class="reveal-animation-container">
+  <div class="reveal-animation" ng-view></div>
 </div>
 
 <footer>
@@ -77,6 +77,7 @@
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular/angular-animate.js"></script>
   <script src="lib/angular/angular-route.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
