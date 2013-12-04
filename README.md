@@ -8,4 +8,6 @@
 
 + run `npm install`
 
++ run `node scripts/web-server.js`
+
 + navigate to `http://localhost:8000`
