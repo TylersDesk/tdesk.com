@@ -7,18 +7,17 @@
 	</div>
 </div> -->
 
-<input ng-model="search">
-<h4>{{search}}</h4>
+<input ng-model="search.$" class="workSearch" placeholder="Search: skill, title, etc">
 
 <div class="row work-tiles">
 	<div class="col-xs-3" ng-click="showWork('web')" ng-class="{'navhighlight': displaywork=='web'}">
-		<h3>Web</h3>
+		<h3>All</h3>
 	</div>
 	<div class="col-xs-3" ng-click="showWork('photo')" ng-class="{'navhighlight': displaywork=='photo'}">
-		<h3>Photo</h3>
+		<h3>Web</h3>
 	</div>
 	<div class="col-xs-3" ng-click="showWork('motion')" ng-class="{'navhighlight': displaywork=='motion'}">
-		<h3>Launches</h3>
+		<h3>Photo</h3>
 	</div>
 	<div class="col-xs-3" ng-click="showWork('creative')" ng-class="{'navhighlight': displaywork=='creative'}">
 		<h3>Creative</h3>
@@ -29,7 +28,7 @@
 <div class="row">
 <div ng-switch="displaywork">
 	<div ng-switch-when="web" class="reveal-animation">
-		<div class="row workcont" ng-repeat="workitem in workcat.web">
+		<div class="row workcont" ng-repeat="workitem in web | filter:search">
 			<div class="col-md-8">
 				<img ng-src="http://placehold.it/768x300" class="img-responsive" />
 			</div>

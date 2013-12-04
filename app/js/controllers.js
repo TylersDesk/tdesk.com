@@ -49,6 +49,7 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
     }, function (workcat) {
       console.log('when does this fire? only on change?');
       $scope.workcat = workcat;
+      $scope.web = workcat.web;
       console.log($scope);
     });
 
@@ -61,6 +62,6 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
 }])
 .controller('bioCtrl', [ function() {
   console.log('Firing Bio Ctrl');
-  d3.select(".bio-container").append("p").text("New paragraph!");
+  d3.select(".bio-container").append("p").text("This is Coming In from d3.js");
 
 }]);
