@@ -60,8 +60,14 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
     
 
 }])
-.controller('bioCtrl', [ function() {
+.controller('bioCtrl', ['blogService', '$scope', function(blogService, $scope) {
   console.log('Firing Bio Ctrl');
   d3.select(".bio-container").append("p").text("This is Coming In from d3.js");
 
+}]).controller('learnCtrl', ['blogService', '$scope', function (blogService, $scope) {
+  var blogPromise = blogService.getBlog();
+  console.log();
+  blogPromise.then(function(value) {
+    $scope.blogItems = value;
+  })
 }]);

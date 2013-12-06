@@ -45,4 +45,19 @@ factory('workService', function ($http) {
 			return workItems;
 		}
 	}
-});
+}).factory('blogService',  ['$http', '$q',  function ($http, $q) {
+
+	return {
+		getBlog: function() {
+			var deferred = $q.defer();
+
+			$http.get('https://www.googleapis.com/blogger/v3/blogs/6690107699880631230/posts?key=AIzaSyC0pJ2Y7XMvsq7EkKSXLfoMJoluS7xU8ak').success(function (blogData){
+				console.log(blogData.items);
+				deferred.resolve(blogData.items);
+
+			});
+
+			return deferred.promise;
+		}
+	}
+}]);

@@ -1,5 +1,11 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div class="row">
+		<div class="col-sm-12">
+		<h1>Latest Articles (blog feed)</h1>
+		<ul class="latest">
+			<li ng-repeat="article in blogItems">
+				<h1>{{article.title}}</h1>
+				<div ng-bind-html="article.content"></div>
+			</li>
+		</ul>
+	</div>
+</div>

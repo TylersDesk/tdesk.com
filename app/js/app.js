@@ -4,6 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'ngAnimate',
+  'ngSanitize',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
@@ -14,7 +15,7 @@ angular.module('myApp', [
       $routeProvider.when('/', { templateUrl: 'partials/home.html', controller: 'HomeCtrl'});
       $routeProvider.when('/bio', {templateUrl: 'partials/bio.html', controller: 'bioCtrl'});
       $routeProvider.when('/work', {templateUrl: 'partials/work.html', controller: 'workCtrl'});
-      $routeProvider.when('/curiosity', {templateUrl: 'partials/curiosity.html', controller: 'HomeCtrl'});
+      $routeProvider.when('/curiosity', {templateUrl: 'partials/curiosity.html', controller: 'learnCtrl'});
       $routeProvider.otherwise({redirectTo: '/'});
     }]
 );
