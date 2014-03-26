@@ -10,8 +10,11 @@
     "javascript"
   ],
   "dependencies": {
-  		"jquery":"*",
-  		"angular":"*"
+  		"jquery":"1.9.0",
+  		"angular":"*",
+  		"d3":"*",
+  		"bootstrap":"3.1.1",
+  		"less":"*"
   	},
   "license": "MIT",
   "private": true,
