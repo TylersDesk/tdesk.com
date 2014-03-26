@@ -1,0 +1,4 @@
+*.DS_Store
+
+#Bower Stuff
+bower_components
