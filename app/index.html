@@ -14,14 +14,25 @@
  <div class="top-cont">
     <div class="container">
       <nav>
-        <div class="row visible-xs">
-          <div class="col-xs-12">
-            <a href="#"><span class="glyphicon glyphicon-align-justify"></span></a>
+        <div class="row">
+          <div class="col-sm-4">
+            <a href="#/"><img src="img/tylersdesk-logo.png" class="img-responsive tylerlogo"></a>
           </div>
-        </div>
-        <div class="row hidden-xs">
-          <div class="col-sm-12">
-            <h1><a href="#">TylersDesk.com</a></h1>
+          <div class="col-sm-4 col-sm-offset-4">
+            <div class="row cats">
+              <div class="col-xs-4" ng-click="loadView('bio')">
+                <span class="glyphicon glyphicon-user"></span><br />
+                <!-- <span>Work</span> -->
+              </div>
+              <div class="col-xs-4" ng-click="loadView('work')">
+                <span class="glyphicon glyphicon-folder-open"></span><br />
+                <!-- <span>Bio</span> -->
+              </div>
+              <div class="col-xs-4" ng-click="loadView('curiosity')">
+                <span class="glyphicon glyphicon-heart"></span><br />
+                <!-- <span>Learn</span> -->
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -31,7 +42,7 @@
 <!-- <welcome message="currentview">
 </welcome> -->
 
-<div class="page-cont">
+<!-- <div class="page-cont">
   <div class="container">
     <div class="row cats">
       <div class="col-xs-4" ng-click="loadView('work')">
@@ -39,8 +50,7 @@
                 <h2>Work</h2>
       </div>
       <div class="col-xs-4" ng-click="loadView('bio')">
-        <span class="glyphicon glyphicon-user"></span><br />
-                <h2>Bio</h2>
+        
       </div>
       <div class="col-xs-4" ng-click="loadView('curiosity')">
         <span class="glyphicon glyphicon-heart"></span><br />
@@ -48,7 +58,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="reveal-animation-container">
   <div class="reveal-animation" ng-view></div>
@@ -57,10 +67,10 @@
 <footer>
   <div class="container center">
     <ul>
-      <li>Twitter</li>
-      <li>LinkedIn</li>
-      <li>GitHub</li>
-      <li>Facebook</li>
+      <li><a href="https://twitter.com/tylersdesk">Twitter</a></li>
+      <li><a href="https://www.linkedin.com/pub/tyler-maynard/38/906/740">LinkedIn</a></li>
+      <li><a href="https://github.com/TylersDesk">GitHub</a></li>
+      <li><a href="https://www.facebook.com/pages/Tyler-Maynard-Design/245437462387">Facebook</a></li>
     </ul>
     <span>&copy;2013 TylersDesk.com&trade;</span>
     
@@ -70,16 +80,21 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   -->
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular/angular-animate.js"></script>
-  <script src="lib/angular/angular-route.js"></script>
-  <script src="lib/angular/angular-sanitize.min.js"></script>
-  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+  <!-- 
+  Switch to require.js
+  -->
+
+  <script src="assets/angular/angular.js"></script>
+  <script src="assets/angular-animate/angular-animate.js"></script>
+  <script src="assets/angular-route/angular-route.js"></script>
+  <script src="assets/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="assets/d3/d3.js" charset="utf-8"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
-  <script src="lib/less/less.js"></script>
+  <script src="assets/less/dist/less-1.7.0.min.js"></script> 
 </body>
 </html>

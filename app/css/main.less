@@ -29,14 +29,14 @@
   -o-transition: all .15s ease-in-out;
 }
 
-.margin-variable {
-
-}
-
 .center {text-align:center;}
 .roundtest {border-radius:10px; box-shadow:3px 6px 0px #525252}
 .roundtest2 {border-radius:50%;}
 .roundtest3 {border-radius:3px; border:1px dotted @white;}
+
+body {
+  overflow-y: scroll;
+}
 
 
 ///////////////////////////
@@ -77,6 +77,11 @@ body{
 nav {
   padding:15px 0;
   text-align: center;
+
+  .tylerlogo {
+    margin:0 auto;
+    padding-top: 5px;
+  }
 
   .row {text-align: center;}
 
@@ -213,15 +218,17 @@ ul.latest {
   .col-xs-4 {
     text-align:center;
     font-size:10px;
-    padding:30px 0;
     .transform;
-
-    h2 {
-      font-size:17px;
-    }
+    height: 30px;
+    padding-top: 5px;
+    cursor: pointer;
 
     span {
-      font-size:30px;
+      font-size:10px;
+    }
+
+    span.glyphicon {
+      font-size:20px;
     }
   }
 
@@ -514,11 +521,6 @@ max-height:1px; opacity: 0; visibility: hidden; top: -10px; transition-duration:
 }
 
 
-
-
-
-
-
 /*   Media Queries */
 
 @media (max-width:767px)  {
@@ -531,6 +533,11 @@ max-height:1px; opacity: 0; visibility: hidden; top: -10px; transition-duration:
 
     .col-sm-5 {
       text-align: center;
+    }
+
+    .row.cats {
+      margin-top:15px;
+      margin-bottom:10px;
     }
   }
   .page-cont {

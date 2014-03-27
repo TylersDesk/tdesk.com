@@ -12,9 +12,13 @@
   "dependencies": {
   		"jquery":"1.9.0",
   		"angular":"*",
+      "angular-route":"*",
+      "angular-animate":"*",
+      "angular-sanitize":"*",
   		"d3":"*",
   		"bootstrap":"3.1.1",
-  		"less":"*"
+  		"less":"*",
+  		"requirejs":"*"
   	},
   "license": "MIT",
   "private": true,
