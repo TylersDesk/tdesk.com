@@ -56,7 +56,7 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
     $scope.showWork = function(workItem) {
       $scope.displaywork = workItem
     }
-    //$scope.displaywork = 'web';
+    $scope.displaywork = 'web';
     
 
 }])
@@ -64,7 +64,18 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
   console.log('Firing Bio Ctrl');
   d3.select(".bio-container").append("p").text("This is Coming In from d3.js");
 
-}]).controller('learnCtrl', ['blogService', '$scope', function (blogService, $scope) {
+  $('.thing').waypoint(function(direction) {
+    console.log('Top of thing hit top of viewport.', direction);
+  });
+
+  $('.side-nav').affix({
+    offset: {
+      top: 90
+    }
+  });
+
+}])
+.controller('learnCtrl', ['blogService', '$scope', function (blogService, $scope) {
   var blogPromise = blogService.getBlog();
   console.log();
   blogPromise.then(function(value) {
