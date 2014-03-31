@@ -63,9 +63,45 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
 .controller('bioCtrl', ['blogService', '$scope', function(blogService, $scope) {
   console.log('Firing Bio Ctrl');
 
-  var dataVis = [1,2,3,4,5];
-  
-  d3.select(".bio-container").append("p").text("This is Coming In from d3.js");
+  var dataset = [ 5, 10, 15, 20, 25 ];
+
+  d3.select(".bio-container").selectAll("div")
+    .data(dataset)
+    .enter()
+    .append("div")
+    .style( "color", function(d) {
+      if (d > 15) {
+        return "red";
+      } else {
+        return "blue";
+      }
+    }).classed("bar", true)
+    .style("height", function(d) {
+      d = d * 5;
+      return d + "px";
+    });
+
+  $scope.changeData = function() {
+    dataset = [12, 31, 32 ,43, 54, 10, 4, 12, 20];
+
+    d3.select(".bio-container").selectAll("div")
+    .data(dataset)
+    .enter()
+    .append("div")
+    .style( "color", function(d) {
+      if (d > 15) {
+        return "red";
+      } else {
+        return "blue";
+      }
+    }).classed("bar", true)
+    .style("height", function(d) {
+      d = d * 5;
+      return d + "px";
+    });
+  }
+
+  //d3.select(".bio-container").append("p").text("This is Coming In from d3.js");
 
   $('.thing').waypoint(function(direction) {
     console.log('Top of thing hit top of viewport.', direction);
