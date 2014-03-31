@@ -62,6 +62,9 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
 }])
 .controller('bioCtrl', ['blogService', '$scope', function(blogService, $scope) {
   console.log('Firing Bio Ctrl');
+
+  var dataVis = [1,2,3,4,5];
+  
   d3.select(".bio-container").append("p").text("This is Coming In from d3.js");
 
   $('.thing').waypoint(function(direction) {
