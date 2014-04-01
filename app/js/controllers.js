@@ -82,23 +82,20 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
     });
 
   $scope.changeData = function() {
+    dataset = [];
     dataset = [12, 31, 32 ,43, 54, 10, 4, 12, 20];
 
     d3.select(".bio-container").selectAll("div")
     .data(dataset)
     .enter()
     .append("div")
-    .style( "color", function(d) {
-      if (d > 15) {
-        return "red";
-      } else {
-        return "blue";
-      }
-    }).classed("bar", true)
+    .classed("bar", true)
     .style("height", function(d) {
       d = d * 5;
       return d + "px";
     });
+
+    console.log(d3.selectAll('.bio-container div'));
   }
 
   //d3.select(".bio-container").append("p").text("This is Coming In from d3.js");
