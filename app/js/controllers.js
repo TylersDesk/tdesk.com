@@ -65,7 +65,23 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
 
   var dataset = [ 5, 10, 15, 20, 25 ];
 
-  d3.select(".bio-container").selectAll("div")
+  // Update…
+  var p = d3.select("body").selectAll("p")
+      .data(dataset)
+      .text(function(d) { 
+        return d 
+      });
+
+  // Enter…
+  p.enter().append("p")
+      .text(String);
+
+  // Exit…
+  p.exit().remove();
+
+  
+
+  var myd3 = d3.select(".bio-container").selectAll("div")
     .data(dataset)
     .enter()
     .append("div")
@@ -82,12 +98,10 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
     });
 
   $scope.changeData = function() {
-    dataset = [];
     dataset = [12, 31, 32 ,43, 54, 10, 4, 12, 20];
 
     d3.select(".bio-container").selectAll("div")
     .data(dataset)
-    .enter()
     .append("div")
     .classed("bar", true)
     .style("height", function(d) {
