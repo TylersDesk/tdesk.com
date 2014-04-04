@@ -37,7 +37,6 @@ factory('workService', function ($http) {
 			$http.get('lib/datastore/work.js').success( function(data) {
 				
 				workItems = data;
-				console.log(workItems);
 				return data;
 			});
 				

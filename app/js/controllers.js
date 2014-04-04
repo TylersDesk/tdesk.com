@@ -46,11 +46,9 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
     $scope.$watch( function () {
       console.log('watching function');
       return workService.getItem();
-    }, function (workcat) {
+    }, function () {
       console.log('when does this fire? only on change?');
-      $scope.workcat = workcat;
-      $scope.web = workcat.web;
-      console.log($scope);
+      $scope.work = workService.getItem();
     });
 
     $scope.showWork = function(workItem) {
