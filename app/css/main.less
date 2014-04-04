@@ -439,25 +439,19 @@ text-align: left;
 // Portfolioa Items
 .port-item {
   position: relative;
-  border-radius: 50%;
   height:200px;
   width: 200px;
   -webkit-transition:all .1s;
   -webkit-transition-delay:.25s;
   margin: 10px auto 20px;
-  background:#010101;
 
   img.logo {
     position: absolute;
     top: -10px;
     left: 0;
-    -webkit-transition: all .1s;
+    -webkit-transition: all .2s;
     -webkit-transition-delay: .25s;
     z-index: 200;
-  }
-
-  .item-details {
-    display:none;
   }
 
   .port-item-overlay {
@@ -466,6 +460,8 @@ text-align: left;
     height: 200px;
     position: relative;
     border-radius: 100px;
+    -webkit-transition: all .3s;
+    -webkit-transition-delay:.25s;
 
     img.screenshot {
       position: absolute;
@@ -474,6 +470,8 @@ text-align: left;
       left: -118px;
       z-index: 2;
       box-shadow: 2px -1px 7px 0 #000000;
+      -webkit-transition: all .3s;
+      -webkit-transition-delay:.5s;
     }
 
     img.screenshot2 {
@@ -481,8 +479,9 @@ text-align: left;
       top: 0px;
       -webkit-transform: scale(0.4) rotate(-9deg);
       left: -94px;
+      -webkit-transition: all .3s;
+      -webkit-transition-delay:.5s;
     }
-
 
     .overlay-top{
       position: absolute;
@@ -493,9 +492,6 @@ text-align: left;
       border-radius: 93px 100px 0 0;
     }
 
-    .animate-close {
-      height:0;
-    }
     .overlay-bot{
       position: absolute;
       bottom: 0px;
@@ -506,6 +502,10 @@ text-align: left;
       border-radius: 0 0 100px 100px;
     }
 
+    .item-details {
+    display:none;
+  }
+
   }
 
 }
@@ -513,18 +513,49 @@ text-align: left;
 .port-item:hover {
   width:100%;
   height: 420px;
-  border-radius:0;
 
-  img {
+  img.logo {
     position: absolute;
     top: 0%;
+    background-color:@main;
     left: 0%;
   }
 
-
-  .overlay-bot, .overlay-top {
-    height: 0;
+  .port-item-overlay {
     width:100%;
+    height: 100%;
+    border-radius: 0px;
+
+    img.screenshot {
+      position: absolute;
+      top: 5px;
+      -webkit-transform: scale(.8) rotate(0);
+      left: 50%;
+      z-index: 2;
+      box-shadow: 2px -1px 7px 0 #000000;
+      }
+
+    img.screenshot2 {
+        position: absolute;
+        top: 5px;
+        -webkit-transform: scale(.8) rotate(0);
+        left: 70%;
+        z-index: 2;
+        box-shadow: 2px -1px 7px 0 #000000;
+
+    }
+    img.screenshot:hover{
+      z-index: 100;
+    }
+    img.screenshot2:hover{
+      z-index: 100;
+    }
+
+
+    .overlay-bot, .overlay-top {
+      height: 0;
+      width:100%;
+    }
   }
 }
 

@@ -35,17 +35,15 @@
 				<div class="overlay-bot"></div>
 				<img ng-src="img/portfolio/{{workitem.screen[0]}}" class="screenshot" />
 				<img ng-src="img/portfolio/{{workitem.screen[1]}}" class="screenshot2" />
+				<div class="item-details">
+					<li class="title">{{workitem.name}}</li>
+					<li class="info">{{workitem.desc}}</li>
+					<li>{{workitem.date}}</li>
+					<li>{{workitem.thumb}}</li>
+					<li>{{workitem.skills}}</li>
+					<li>{{workitem.link}}</li>	
+				</div>
 			</div>
-
-			<div class="item-details">
-				<li class="title">{{workitem.name}}</li>
-				<li class="info">{{workitem.desc}}</li>
-				<li>{{workitem.date}}</li>
-				<li>{{workitem.thumb}}</li>
-				<li>{{workitem.skills}}</li>
-				<li>{{workitem.link}}</li>	
-			</div>
-
 		</div>
 	</div>
 </div>
