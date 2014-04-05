@@ -38,7 +38,6 @@ body {
   overflow-y: scroll;
 }
 
-
 ///////////////////////////
 //  
 //    BootStrap Overwrites
@@ -46,23 +45,6 @@ body {
 
 .col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12 { padding:0;}
 .row {margin-left:0; margin-right: 0;}
-
-//affix stuff
-
-.affix {
-  width: inherit; //helped keep the content the same size on fluid layouts
-  position: fixed;
-  top: 3px;  //height of the nav
-}
-.affix-bottom {
-  width: inherit;
-  position: absolute;
-  top: auto;
-  bottom: 200px;  //height of the footer
-}
-.affix-top {
-  //i didn't need this style but you might
-}
 
 ///////////////////////////
 //  
@@ -138,6 +120,124 @@ footer {
   }
   span{
     font-size: 9px;
+  }
+}
+
+/////////////////
+// Bio Section //
+/////////////////
+
+.bio {
+  
+  .range-container {
+
+    padding:10px 20px;
+
+  }
+
+  input[type="range"] {
+    width:100%;
+  }
+
+  h1 {
+    font-size:30px;
+    text-align: center;
+  }
+  
+  .tyler-slide-container {
+    position:relative;
+
+    .atom-container {
+      position: absolute;
+      top: 184px;
+      left: 160px;
+      z-index: 300;
+    }
+
+    .supporting-text {
+      position: relative;
+      top: -95px;
+      left: -64px;
+      display: inline-block;
+      -webkit-transform: rotate(-90deg);
+      text-align: center;
+      width: 70px;
+    }
+
+    .tyler-slide {
+      position: relative;
+      top:0;
+      right:0;
+      width:3000px;
+      height:500px;
+      -webkit-transition:all .3s ease-out;
+      padding-left: 195px;
+      
+      .tyblock {
+        padding:0px;
+        display:inline-block;
+        float:left;
+
+      }
+
+      .tyblock.pro {
+        display:block;
+        width:2500px;
+        height:230px;
+        position: relative;
+        top: 16px;
+
+        h2 {
+          margin:10px 0 10px;
+        }
+
+        .pro-item {
+          position: relative;
+          bottom: 0;
+          left: 0;
+          /* float: left; */
+          display: inline-block;
+          height: 100%;
+          min-width: 200px;
+
+          .pro-item-content {
+            position: absolute;
+            bottom:0;
+          }
+        }
+      }
+
+      .tyblock.timeline {
+        display:block;
+        width:2500px;
+        height:40px;
+      }
+
+      .tyblock.edu {
+        display:block;
+        width:2500px;
+        height:230px;
+        position: relative;
+        top: -16px;
+
+        h2 {
+          margin:10px 0 10px;
+        }
+
+        .edu-item {
+          position: absolute;
+          top:0;
+          left:0;
+        }
+      } 
+
+      .tyblock.start {
+        width:400px;
+        height:100%;
+        border:none;
+        margin-left:40px;
+      }
+    }
   }
 }
 
@@ -620,6 +720,49 @@ max-height:1px; opacity: 0; visibility: hidden; top: -10px; transition-duration:
 
 .default { opacity: 0; visibility: hidden; top: -10px; transition-duration: 200ms, 200ms, 0; transition-property: opacity, top, visibility; transition-delay: 0, 0, 200ms; }
 .hidden { opacity: 1; visibility: visible; top: 0px; transition-duration: 200ms, 200ms, 0; transition-property: opacity, top, visibility; transition-delay: 200ms, 200ms, 0; }
+
+.atom-loader {
+  position: relative;
+  margin: 50px auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #1abc9c;
+  //box-shadow: inset 0 0 0 6px #1abc9c, inset 0 0 0 10px white;
+  &:before {
+    position: absolute;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fefefe;
+    -webkit-transform: translate(-10px, 30px);
+    -webkit-animation: electron 0.5s infinite alternate ease;
+    content: "";
+  }
+  &:after {
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #1abc9c;
+    //box-shadow: inset 0 0 0 6px #1abc9c, inset 0 0 0 10px white;
+    opacity: 0;
+    -webkit-animation: neutron 1s infinite;
+    content: "";
+  }
+}
+
+@-webkit-keyframes electron {
+  100% { -webkit-transform: translate(30px, -5px); }
+}
+@-webkit-keyframes neutron {
+  50%  { opacity: 0; }
+  51%  { opacity: 1; }
+  99%  {opacity: 1;}
+  100% { opacity: 0; }
+}
 
 @-webkit-keyframes heartbeat {
   from {

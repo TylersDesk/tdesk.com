@@ -1,123 +1,52 @@
-<!-- <div class="row">
-	<div class="col-sm-10 thing">
-		<ul class="latest">
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in ante sed turpis pulvinar scelerisque eget ut dui. Nullam rhoncus, augue vitae malesuada accumsan, ligula mi facilisis lorem, sit amet luctus nibh erat et diam. Vestibulum sit amet ligula elit. Cras id lorem leo. Mauris ut auctor libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel elementum sem, vel sagittis dui. In hac habitasse platea dictumst. Maecenas pretium viverra suscipit. Nullam quis tortor elit. Vivamus at tincidunt ligula, vel lacinia nulla. Vestibulum et faucibus augue. Vestibulum eu elementum odio.</p>
-
-<p>Vestibulum blandit, diam vel eleifend lobortis, odio nibh faucibus lacus, porta sagittis elit purus vel tortor. Duis lacinia sem vitae felis ultrices, adipiscing auctor orci pulvinar. Nam nec blandit est, ut aliquam ligula. Vestibulum fringilla ultricies condimentum. Aenean ornare ligula ac erat vehicula, ut fringilla velit elementum. Integer aliquam orci nunc, sit amet pretium massa convallis a. Pellentesque vel elit ut metus scelerisque egestas non et felis. Nam pharetra at metus ac laoreet.</p>
-
-<p>Donec enim orci, fringilla id fermentum vitae, aliquet eu purus. Etiam suscipit tempor mauris, tincidunt convallis magna bibendum ut. In faucibus condimentum lacus, sed gravida massa commodo eu. Aenean malesuada, nibh ut dapibus vulputate, tellus arcu ultricies libero, id tempor massa neque sed nisl. Quisque et libero est. Mauris adipiscing in elit et vestibulum. Sed quis malesuada elit. Nam et feugiat felis. Fusce semper dolor eu purus tempor vestibulum. Vivamus tristique, lorem nec congue euismod, nulla eros iaculis nisl, sed scelerisque neque tellus in nisl. Aenean metus massa, consectetur id metus in, lacinia lacinia tortor. Aenean vel faucibus mi.
-			</p>
-
-			<li>Hover</li>
-			<li>Hover</li>
-			<li>Hover</li>
-			<li>Hover</li>
-			<li>Hover</li>
-			<li>Hover</li>
-			<li>Hover</li>
-			<li>Hover</li>
-			<li>Hover</li>
-			<li>Hover</li>
-			<li>Hover</li>
-			<li>Hover</li>
-			<li>Hover</li>
-		</ul>
-	</div>
-	<div class="col-sm-2 right-col">
-		<div class="side-nav">
-			<ul class="list-group stickthis">
-			  <li class="list-group-item">Cras justo odio</li>
-			  <li class="list-group-item">Dapibus ac facilisis in</li>
-			  <li class="list-group-item">Morbi leo risus</li>
-			  <li class="list-group-item">Porta ac consectetur ac</li>
-			  <li class="list-group-item">Vestibulum at eros</li>
-			</ul>
-		</div> -->
-		<!-- <div class="row">
-			<div class="col-xs-6">
-				<ul>
-					<li><span class="glyphicon glyphicon-heart-empty"></span><br />
-						Show Love</li>
-					<li>
-						<span class="glyphicon glyphicon-user"></span><br />
-						About Me
-					</li>
-					<li>
-						<span class="glyphicon glyphicon-send"></span><br />
-						Plane
-					</li>
-				</ul>
+<div class="bio">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="range-container">
+				<input type="range" min="0" max="2500" value="0" ng-model="tyslide" ng-change="moveSlide()">
 			</div>
-			<div class="col-xs-6">
-				<ul>
-					<li>
-						<span class="glyphicon glyphicon-cloud"></span><br />
-						Cloud Work
-					</li>
-					<li>
-						<span class="glyphicon glyphicon-cloud"></span><br />
-						APIs
-					</li>
-					<li>
-						<span class="glyphicon glyphicon-cloud"></span><br />
-						WTFCloud
-					</li>
-				</ul>
+			{{tyslide}}
+		</div>
+	</div>
+
+	<div class="tyler-slide-container">
+		<div class="atom-container">
+			<div class="atom-loader"></div>
+			<div class="supporting-text">
+				We all start somewhere.
+			</div>
+		</div>
+		<div class="tyler-slide" ng-style="move">
+			<div class="tyblock pro">
+				
+				<div class="pro-item">
+					<div class="pro-item-content">
+						<h2>Profession</h2>
+					</div>
+				</div>
+
+				<div class="pro-item">
+					<div class="pro-item-content">
+						<p>This is more stuff</p>
+					</div>
+				</div>
+			</div>
+			<div class="tyblock timeline">
+				<svg width="2500px" height="40">
+					<line x1="0" x2="2500" y1="20" y2="20" stroke="orange" fill="transparent" stroke-width="5"/>
+				</svg>
+			</div>
+			<div class="tyblock edu">
+				<h2>Education</h2>
 			</div>
 		</div>
 	</div>
-</div> -->
+</div>
+
+<!-- 
 <div class="bio-container"></div>
 <button ng-click="changeData()"class="btn btn-default">Change Data</button>
 
 <svg height="50">
 	<line x1="0" y1="0" x2="60" y2="20" stroke="teal"/>
 	<line x1="60" y1="20" x2="80" y2="40" stroke="#ccc" />
-</svg>
-<!-- 
-<div class="sec-cont">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				<h3>Latest Reads</h3>
-			</div>
-			<div class="col-sm-8">
-				<h4>Header</h4>
-				<p>
-					lorem ipsLorem ipsum Tempor exercitation reprehenderit et officia dolor.
-				</p>
-				<p>Lorem ipsum Aute irure laboris Excepteur voluptate dolore Excepteur esse Ut dolore qui id occaecat consectetur ullamco consectetur aliquip veniam fugiat Duis officia amet culpa ullamco fugiat quis anim pariatur amet et eu deserunt in incididunt sunt nisi minim velit sunt cillum mollit veniam fugiat velit Excepteur laborum dolore elit dolore deserunt ut sint esse commodo pariatur in eiusmod enim in fugiat enim fugiat ad ullamco sunt qui ut eiusmod deserunt cupidatat Ut aute sit sunt aliquip elit occaecat ut voluptate incididunt nisi cillum eu ea ex in in aute veniam pariatur Ut cillum irure sit et eu enim reprehenderit incididunt non anim incididunt aliquip cillum dolore amet adipisicing enim minim aliqua veniam do culpa nisi eu pariatur dolore nisi enim Ut minim dolor Duis reprehenderit in eiusmod commodo officia ad elit minim tempor sed amet ut sed eu in culpa minim ut aute nulla irure consequat laboris in esse dolor adipisicing.</p>
-			</div>
-		</div>
-	</div>
-
-</div>
-
-
-<div class="thr-cont">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				<h4>Latest Reads</h4>
-				<p>
-					lorem ipsLorem ipsum Tempor exercitation reprehenderit et officia dolor.
-				</p>
-			</div>
-			<div class="col-sm-4">
-				<h4>Header</h4>
-				<p>
-					lorem ipsLorem ipsum Tempor exercitation reprehenderit et officia dolor.
-				</p>
-			</div>
-			<div class="col-sm-4">
-				<h4>Header</h4>
-				<p>
-					lorem ipsLorem ipsum Tempor exercitation reprehenderit et officia dolor.
-				</p>
-			</div>
-		</div>
-	</div>
-
-</div> -->
-
+</svg> -->

@@ -61,66 +61,80 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
 .controller('bioCtrl', ['blogService', '$scope', function(blogService, $scope) {
   console.log('Firing Bio Ctrl');
 
-  var dataset = [ 5, 10, 15, 20, 25 ];
+  $scope.tyslide = 0;
+  $scope.moveSlide = function() {
+    $scope.move = {
+      right: $scope.tyslide + 'px',
+    }
 
-  // Update…
-  var p = d3.select("body").selectAll("p")
-      .data(dataset)
-      .text(function(d) { 
-        return d 
-      });
+    if ($scope.tyslide >= 50) {
+      $('.supporting-text').fadeOut();
+    } else {
+      $('.supporting-text').fadeIn();
+    }
+  };
 
-  // Enter…
-  p.enter().append("p")
-      .text(String);
 
-  // Exit…
-  p.exit().remove();
+  // var dataset = [ 5, 10, 15, 20, 25 ];
+
+  // // Update…
+  // var p = d3.select("body").selectAll("p")
+  //     .data(dataset)
+  //     .text(function(d) { 
+  //       return d 
+  //     });
+
+  // // Enter…
+  // p.enter().append("p")
+  //     .text(String);
+
+  // // Exit…
+  // p.exit().remove();
 
   
 
-  var myd3 = d3.select(".bio-container").selectAll("div")
-    .data(dataset)
-    .enter()
-    .append("div")
-    .style( "color", function(d) {
-      if (d > 15) {
-        return "red";
-      } else {
-        return "blue";
-      }
-    }).classed("bar", true)
-    .style("height", function(d) {
-      d = d * 5;
-      return d + "px";
-    });
+  // var myd3 = d3.select(".bio-container").selectAll("div")
+  //   .data(dataset)
+  //   .enter()
+  //   .append("div")
+  //   .style( "color", function(d) {
+  //     if (d > 15) {
+  //       return "red";
+  //     } else {
+  //       return "blue";
+  //     }
+  //   }).classed("bar", true)
+  //   .style("height", function(d) {
+  //     d = d * 5;
+  //     return d + "px";
+  //   });
 
-  $scope.changeData = function() {
-    dataset = [12, 31, 32 ,43, 54, 10, 4, 12, 20];
+  // $scope.changeData = function() {
+  //   dataset = [12, 31, 32 ,43, 54, 10, 4, 12, 20];
 
-    d3.select(".bio-container").selectAll("div")
-    .data(dataset)
-    .append("div")
-    .classed("bar", true)
-    .style("height", function(d) {
-      d = d * 5;
-      return d + "px";
-    });
+  //   d3.select(".bio-container").selectAll("div")
+  //   .data(dataset)
+  //   .append("div")
+  //   .classed("bar", true)
+  //   .style("height", function(d) {
+  //     d = d * 5;
+  //     return d + "px";
+  //   });
 
-    console.log(d3.selectAll('.bio-container div'));
-  }
+  //   console.log(d3.selectAll('.bio-container div'));
+  // }
 
-  //d3.select(".bio-container").append("p").text("This is Coming In from d3.js");
+  // //d3.select(".bio-container").append("p").text("This is Coming In from d3.js");
 
-  $('.thing').waypoint(function(direction) {
-    console.log('Top of thing hit top of viewport.', direction);
-  });
+  // $('.thing').waypoint(function(direction) {
+  //   console.log('Top of thing hit top of viewport.', direction);
+  // });
 
-  $('.side-nav').affix({
-    offset: {
-      top: 90
-    }
-  });
+  // $('.side-nav').affix({
+  //   offset: {
+  //     top: 90
+  //   }
+  // });
 
 }])
 .controller('learnCtrl', ['blogService', '$scope', function (blogService, $scope) {
