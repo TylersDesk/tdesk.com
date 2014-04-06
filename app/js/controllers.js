@@ -52,7 +52,7 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
     });
 
     $scope.showWork = function(workItem) {
-      $scope.displaywork = workItem
+      $scope.displaywork = workItem;
     }
     $scope.displaywork = 'web';
     

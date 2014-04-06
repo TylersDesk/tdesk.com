@@ -510,13 +510,6 @@ border-radius: 50%;
 margin:0 auto;
 }
 
-
-
-.work-container {
-  position:relative;
-  overflow:hidden;
-}
-
 input.workSearch {
   width: 100%;
   height: 41px;
@@ -538,6 +531,41 @@ padding-bottom: 7px;
 text-align: left;
 }
 
+/////////////////
+//  Work Tiles  /
+/////////////////
+
+.work-card {
+  margin:2px;
+  .work-head {
+    text-align: left;
+    background:#4D5555;
+    position: relative;
+
+
+    h2 {
+      display: inline-block;
+      font-size: 14px;
+      margin:0;
+      padding:10px;
+      border-left:2px solid @hghlt;
+    }
+
+    h2.web {
+      border-left:2px solid white;
+    }
+    .work-cta {
+      display: inline-block;
+      border-top: 0px solid white;
+      border-left: 1px solid #2b2b2b;
+      position: absolute;
+      right: 0;
+      padding: 10px 15px 5px;
+      background: #1D6360;
+    }
+  }
+}
+
 
 //Data Visualizations
 
@@ -552,128 +580,128 @@ text-align: left;
 
 }
 
-// Portfolioa Items
-.port-item {
-  position: relative;
-  height:200px;
-  width: 200px;
-  -webkit-transition:all .1s;
-  -webkit-transition-delay:.25s;
-  margin: 10px auto 20px;
+// // Portfolioa Items
+// .port-item {
+//   position: relative;
+//   height:200px;
+//   width: 200px;
+//   -webkit-transition:all .1s;
+//   -webkit-transition-delay:.25s;
+//   margin: 10px auto 20px;
 
-  img.logo {
-    position: absolute;
-    top: -10px;
-    left: 0;
-    -webkit-transition: all .2s;
-    -webkit-transition-delay: .25s;
-    z-index: 200;
-  }
+//   img.logo {
+//     position: absolute;
+//     top: -10px;
+//     left: 0;
+//     -webkit-transition: all .2s;
+//     -webkit-transition-delay: .25s;
+//     z-index: 200;
+//   }
 
-  .port-item-overlay {
-    overflow: hidden;
-    width: 200px;
-    height: 200px;
-    position: relative;
-    border-radius: 100px;
-    -webkit-transition: all .3s;
-    -webkit-transition-delay:.25s;
+//   .port-item-overlay {
+//     overflow: hidden;
+//     width: 200px;
+//     height: 200px;
+//     position: relative;
+//     border-radius: 100px;
+//     -webkit-transition: all .3s;
+//     -webkit-transition-delay:.25s;
 
-    img.screenshot {
-      position: absolute;
-      top: 5px;
-      -webkit-transform: scale(0.4) rotate(17deg);
-      left: -118px;
-      z-index: 2;
-      box-shadow: 2px -1px 7px 0 #000000;
-      -webkit-transition: all .3s;
-      -webkit-transition-delay:.5s;
-    }
+//     img.screenshot {
+//       position: absolute;
+//       top: 5px;
+//       -webkit-transform: scale(0.4) rotate(17deg);
+//       left: -118px;
+//       z-index: 2;
+//       box-shadow: 2px -1px 7px 0 #000000;
+//       -webkit-transition: all .3s;
+//       -webkit-transition-delay:.5s;
+//     }
 
-    img.screenshot2 {
-      position: absolute;
-      top: 0px;
-      -webkit-transform: scale(0.4) rotate(-9deg);
-      left: -94px;
-      -webkit-transition: all .3s;
-      -webkit-transition-delay:.5s;
-    }
+//     img.screenshot2 {
+//       position: absolute;
+//       top: 0px;
+//       -webkit-transform: scale(0.4) rotate(-9deg);
+//       left: -94px;
+//       -webkit-transition: all .3s;
+//       -webkit-transition-delay:.5s;
+//     }
 
-    .overlay-top{
-      position: absolute;
-      width: 100%;
-      height: 100px;
-      background: rgba(88, 228, 217, 0.36);
-      -webkit-transition: all .25s;
-      border-radius: 93px 100px 0 0;
-    }
+//     .overlay-top{
+//       position: absolute;
+//       width: 100%;
+//       height: 100px;
+//       background: rgba(88, 228, 217, 0.36);
+//       -webkit-transition: all .25s;
+//       border-radius: 93px 100px 0 0;
+//     }
 
-    .overlay-bot{
-      position: absolute;
-      bottom: 0px;
-      width: 100%;
-      height: 100px;
-      background: rgba(88, 228, 217, 0.36);
-      -webkit-transition: all .25s;
-      border-radius: 0 0 100px 100px;
-    }
+//     .overlay-bot{
+//       position: absolute;
+//       bottom: 0px;
+//       width: 100%;
+//       height: 100px;
+//       background: rgba(88, 228, 217, 0.36);
+//       -webkit-transition: all .25s;
+//       border-radius: 0 0 100px 100px;
+//     }
 
-    .item-details {
-    display:none;
-  }
+//     .item-details {
+//     display:none;
+//   }
 
-  }
+//   }
 
-}
+// }
 
-.port-item:hover {
-  width:100%;
-  height: 420px;
+// .port-item:hover {
+//   width:100%;
+//   height: 420px;
 
-  img.logo {
-    position: absolute;
-    top: 0%;
-    background-color:@main;
-    left: 0%;
-  }
+//   img.logo {
+//     position: absolute;
+//     top: 0%;
+//     background-color:@main;
+//     left: 0%;
+//   }
 
-  .port-item-overlay {
-    width:100%;
-    height: 100%;
-    border-radius: 0px;
+//   .port-item-overlay {
+//     width:100%;
+//     height: 100%;
+//     border-radius: 0px;
 
-    img.screenshot {
-      position: absolute;
-      top: 5px;
-      -webkit-transform: scale(.8) rotate(0);
-      left: 50%;
-      z-index: 2;
-      box-shadow: 2px -1px 7px 0 #000000;
-      }
+//     img.screenshot {
+//       position: absolute;
+//       top: 5px;
+//       -webkit-transform: scale(.8) rotate(0);
+//       left: 50%;
+//       z-index: 2;
+//       box-shadow: 2px -1px 7px 0 #000000;
+//       }
 
-    img.screenshot2 {
-        position: absolute;
-        top: 5px;
-        -webkit-transform: scale(.8) rotate(0);
-        left: 70%;
-        z-index: 2;
-        box-shadow: 2px -1px 7px 0 #000000;
+//     img.screenshot2 {
+//         position: absolute;
+//         top: 5px;
+//         -webkit-transform: scale(.8) rotate(0);
+//         left: 70%;
+//         z-index: 2;
+//         box-shadow: 2px -1px 7px 0 #000000;
 
-    }
-    img.screenshot:hover{
-      z-index: 100;
-    }
-    img.screenshot2:hover{
-      z-index: 100;
-    }
+//     }
+//     img.screenshot:hover{
+//       z-index: 100;
+//     }
+//     img.screenshot2:hover{
+//       z-index: 100;
+//     }
 
 
-    .overlay-bot, .overlay-top {
-      height: 0;
-      width:100%;
-    }
-  }
-}
+//     .overlay-bot, .overlay-top {
+//       height: 0;
+//       width:100%;
+//     }
+//   }
+// }
 
 //Animations
 
