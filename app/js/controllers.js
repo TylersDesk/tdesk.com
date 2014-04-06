@@ -58,7 +58,7 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
     
 
 }])
-.controller('bioCtrl', ['blogService', '$scope', function(blogService, $scope) {
+.controller('bioCtrl', ['blogService', '$scope', '$swipe', function(blogService, $scope, $swipe) {
   console.log('Firing Bio Ctrl');
 
   $scope.tyslide = 0;
@@ -72,6 +72,11 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
     } else {
       $('.supporting-text').fadeIn();
     }
+  };
+
+  $scope.swipe = function(stuff) {
+    $scope.tyslide = $scope.tyslide + 100;
+    $scope.moveSlide();
   };
 
 
