@@ -18,7 +18,31 @@
 		<div class="tyler-slide" ng-style="move">
 			<div class="tyblock pro">
 				<svg width="100%" height="100%">
-					 <path d="M 100 100 L 300 100 L 200 300 z" />
+					<defs>
+						<style type="text/css"><![CDATA[
+						   #job-brighton {
+						     stroke: black;
+						     fill-opacity: .3;
+						   }
+						   #job-backcountry {
+						   	 stroke: blue;
+						   	 fill: blue;
+						     fill-opacity: .3;
+						   }
+						   #job-zionsbank {
+						   	stroke:green;
+						   	fill:green;
+						   	fill-opacity:.3;
+						   }
+						]]></style>
+					</defs>
+					<path d="M 0 240 l 400 -40 l 100 -60 l 150 -20 l 30 30 l 600 100 l 0 200 z" id="job-brighton"></path>
+
+					<path d="M 800 240 l 200 -20 l 100 -140 l 600 -50 l 50 210 z" id="job-backcountry">
+					</path>
+
+					<path d="M 1600 240 l 100 50 l 20 -40 l 60 0 l 150 -40 l 200 - 30 l 0 240 z" id="job-zionsbank"></path>
+					<!-- <path d="M 0 240 l 2500 -0 l 0 -240 z" id="job-brighton" /> -->
 				</svg>
 				
 				<div class="pro-item">
@@ -29,12 +53,20 @@
 
 				<div class="pro-item">
 					<div class="pro-item-content">
-						<p>This is more stuff</p>
+						<p><img src="img/company-logos/brighton.png" class="brighton-resort" /></p>
 					</div>
 				</div>
 			</div>
 			<div class="tyblock timeline">
 				<svg width="2500px" height="40">
+					<defs>
+						<style type="text/css"><![CDATA[
+						   #MyRect {
+						     stroke: black;
+						     fill: red;
+						   }
+						]]></style>
+					</defs>
 					<line x1="0" x2="2500" y1="20" y2="20" stroke="orange" fill="transparent" stroke-width="5"/>
 				</svg>
 			</div>
