@@ -54,7 +54,20 @@ controller('scoreCtrl', ['$scope', 'scoreService', function($scope,scoreService)
     $scope.showWork = function(workItem) {
       $scope.displaywork = workItem;
     }
-    $scope.displaywork = 'web';
+
+    $scope.animatein = function(incomingString) {
+      console.log(incomingString);
+      if ($scope.displaythis === incomingString) {
+        $scope.displaythis = "";
+      } else {
+        $scope.displaythis = incomingString;  
+      }
+      
+    };
+
+    $scope.displaywork = ''; //Added for filterings
+    $scope.displaythis = ''; //Which workitem to show
+
     
 
 }])

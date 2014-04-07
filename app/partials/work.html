@@ -1,41 +1,52 @@
-<!-- <div class="row">
-	<div class="col-xs-12">
-		<h3>Objective: Master Web Development</h3>
-		<p>
-			I have recently switched gears to focus strictly on web development.
-		</p>
-	</div>
-</div> -->
-
 <input ng-model="search.$" class="workSearch" placeholder="Search: skill, title, etc">
 
 <div class="row work-tiles">
-	<div class="col-xs-3" ng-click="showWork('')" ng-class="{'navhighlight': displaywork==''}">
+	<div class="col-sm-3" ng-click="showWork('')" ng-class="{'navhighlight': displaywork==''}">
 		<h3>All</h3>
 	</div>
-	<div class="col-xs-3" ng-click="showWork('web')" ng-class="{'navhighlight web': displaywork=='web'}">
+	<div class="col-sm-3" ng-click="showWork('web')" ng-class="{'navhighlight web': displaywork=='web','web': displaywork!='web'}">
 		<h3>Web</h3>
 	</div>
-	<div class="col-xs-3" ng-click="showWork('photo')" ng-class="{'navhighlight photo': displaywork=='photo'}">
+	<div class="col-sm-3" ng-click="showWork('photo')" ng-class="{'navhighlight photo': displaywork=='photo', 'photo': displaywork!='photo'}">
 		<h3>Photo</h3>
 	</div>
-	<div class="col-xs-3" ng-click="showWork('work')" ng-class="{'navhighlight creative': displaywork=='creative'}">
+	<div class="col-sm-3" ng-click="showWork('creative')" ng-class="{'navhighlight creative': displaywork=='creative', 'creative':displaywork!='creative'}">
 		<h3>Creative</h3>
 	</div>
 </div>
 
 <div class="row workcont">
-	<div class="col-sm-4 center" ng-repeat="workitem in work.work | filter:search | filter:{type : displaywork } ">
-		<div class="work-card">
-			<div class="work-head">
-				<h2 class="{{workitem.type}}">{{workitem.name}}</h2>
-				<div class="work-cta">X</div>
-			</div>
 
+	<div class="col-sm-6 center work-animation" ng-repeat="workitem in work.work | filter:search | filter:{type : displaywork } ">
+
+		<div class="work-card">
+
+			<div class="work-head" ng-click="animatein(workitem.name)">
+				<h2 class="{{workitem.type}}">{{workitem.name}}</h2>
+				<div class="work-cta"><span ng-class="{'glyphicon':true, 'glyphicon-minus': displaythis === workitem.name, 'glyphicon-plus':displaythis!=workitem.name}"></span></div>
+			</div>
+			<div ng-class="{'work-body':true, 'displaythis' : displaythis === workitem.name}">
+				<h3 class="client">Client</h3>
+				<p class="client">{{workitem.client}}</p>
+				<div class="clearfix"></div>
+
+				<h3 class="problem">Problem</h3>
+				<p class="problem">{{workitem.problem}}</p>
+				<div class="clearfix"></div>
+
+				<h3 class="solution">Solution</h3>
+				<p class="solution">{{workitem.solution}}</p>
+				<div class="clearfix"></div>
+
+				<h3 class="skills">Technology</h3>
+				<p class="skills">
+					<span ng-repeat="skill in workitem.skills">
+						{{skill}}
+					</span>
+				</p>
+				<div class="clearfix"></div>
+
+			</div>
 		</div>
 	</div>
-</div>
-
-<div class="row">
-
 </div>
