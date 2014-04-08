@@ -9,6 +9,7 @@ angular.module('myApp', [
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
+  'myApp.tylerdirectives',
   'myApp.controllers'
 ]).config([
   '$routeProvider',

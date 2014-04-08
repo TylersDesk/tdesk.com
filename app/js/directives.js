@@ -9,16 +9,6 @@ angular.module('myApp.directives', []).
       elm.text(version);
     };
   }]).
-  directive('workCard', function($compile){
-    return {
-      restrict: 'C',
-      template: "<input type=\"text\" ng-model='workThing' />{{workThing}} <br />"
-      // link: function(scope, element, attrs, controller) {
-      //   var markup = "<input type=\"text\" ng-model='workThing' />{{workThing}} <br />";
-      //   angular.element(element).html($compile(markup)(scope));
-      // }
-    }
-  }).
   directive('score', function() {
   	return {
   		restrict: 'E',

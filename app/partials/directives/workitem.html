@@ -1,0 +1,29 @@
+<div class="work-card">
+
+	<div class="work-head" ng-click="animatein()">
+		<h2 class="{{workitem.type}}">{{workitem.name}}</h2>
+		<div class="work-cta"><span ng-class="{'glyphicon':true, 'glyphicon-minus': displaythis === workitem.name, 'glyphicon-plus':displaythis!=workitem.name}"></span></div>
+	</div>
+	<div ng-class="{'work-body':true, 'displaythis' : displaythis === workitem.name}">
+		<h3 class="client">Client</h3>
+		<p class="client">{{workitem.client}}</p>
+		<div class="clearfix"></div>
+
+		<h3 class="problem">Problem</h3>
+		<p class="problem">{{workitem.problem}}</p>
+		<div class="clearfix"></div>
+
+		<h3 class="solution">Solution</h3>
+		<p class="solution">{{workitem.solution}}</p>
+		<div class="clearfix"></div>
+
+		<h3 class="skills">Technology</h3>
+		<p class="skills">
+			<span ng-repeat="skill in workitem.skills">
+				{{skill}}
+			</span>
+		</p>
+		<div class="clearfix"></div>
+
+	</div>
+</div>
