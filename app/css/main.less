@@ -645,32 +645,28 @@ text-align: left;
      }
 
   .work-body {
-    opacity: 0; 
-    visibility: hidden;
+    opacity: 0;
     background: #4D5555;
     text-align: left;
-    position: absolute;
     z-index:400;
     // -wekit-transition-duration:200ms, 200ms, 0;
     // -webkit-property: opacity, top visibility;
     // -webkit-transition-delay: 0, 0, 200ms;
-
-
+    height: 1px;
+    overflow: hidden;
     -webkit-transition:.3s all .1s;
     -webkit-transform-origin: top;
     -webkit-transform: perspective(350px) rotateX(-90deg);
 
     &.displaythis {
       opacity: 1; 
-      visibility: visible; 
       top: 58px; 
       // -webkit-transition-duration: 200ms, 200ms, 0; 
       // -webkit-transition-property: opacity, top, visibility; 
       // -webkit-transition-delay: 200ms, 200ms, 0;
       border-bottom:1px solid #010101;
-
       -webkit-transform: perspective(350px) rotateX(0deg);
-      max-height: 400px;
+      height: 400px;
     }
 
     h3 {
@@ -707,6 +703,11 @@ text-align: left;
     }
   }
 }
+
+///////////////////////////////
+//  Display Card Animations  //
+///////////////////////////////
+
 
 
 //Data Visualizations
