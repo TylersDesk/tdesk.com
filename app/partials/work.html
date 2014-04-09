@@ -1,26 +1,26 @@
-
-
-<br />
-<br />
-<br />
-
-<input ng-model="search.$" class="workSearch" placeholder="Search: skill, title, etc">
-
-<div class="row work-tiles">
-	<div class="col-sm-3" ng-click="showWork('')" ng-class="{'navhighlight': displaywork==''}">
-		<h3>All</h3>
+<div class="row">
+	
+	<div class="col-sm-8">
+		<div class="row work-tiles">
+			<div class="col-sm-3" ng-click="showWork('')" ng-class="{'navhighlight': displaywork==''}">
+				<h3>All</h3>
+			</div>
+			<div class="col-sm-3" ng-click="showWork('web')" ng-class="{'navhighlight web': displaywork=='web','web': displaywork!='web'}">
+				<h3>Web</h3>
+			</div>
+			<div class="col-sm-3" ng-click="showWork('photo')" ng-class="{'navhighlight photo': displaywork=='photo', 'photo': displaywork!='photo'}">
+				<h3>Photo</h3>
+			</div>
+			<div class="col-sm-3" ng-click="showWork('creative')" ng-class="{'navhighlight creative': displaywork=='creative', 'creative':displaywork!='creative'}">
+				<h3>Creative</h3>
+			</div>
+		</div>
 	</div>
-	<div class="col-sm-3" ng-click="showWork('web')" ng-class="{'navhighlight web': displaywork=='web','web': displaywork!='web'}">
-		<h3>Web</h3>
+	<div class="col-sm-4 hidden-xs">
+		<input ng-model="search.$" class="workSearch" placeholder="Search: skill, title, etc">
 	</div>
-	<div class="col-sm-3" ng-click="showWork('photo')" ng-class="{'navhighlight photo': displaywork=='photo', 'photo': displaywork!='photo'}">
-		<h3>Photo</h3>
-	</div>
-	<div class="col-sm-3" ng-click="showWork('creative')" ng-class="{'navhighlight creative': displaywork=='creative', 'creative':displaywork!='creative'}">
-		<h3>Creative</h3>
-	</div>
+
 </div>
-
 <div class="row workcont">
 
 	<div class="col-sm-6 center work-animation" ng-repeat="workitem in work.work | filter:search | filter:{type : displaywork } ">
