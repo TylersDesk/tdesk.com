@@ -1,6 +1,14 @@
 <div class="work-card">
 
 	<div class="work-head" ng-click="animatein()">
+		<div class="worktype">
+			<span ng-class="
+			{'glyphicon':true,
+			 'glyphicon-globe': workitem.type === 'web',
+			 'glyphicon-picture': workitem.type === 'photo',
+			 'glyphicon-heart': workitem.type === 'creative'
+			}"></span>
+		</div>
 		<h2 class="{{workitem.type}}">{{workitem.name}}</h2>
 		<div class="work-cta"><span ng-class="{'glyphicon':true, 'glyphicon-minus': displaythis === workitem.name, 'glyphicon-plus':displaythis!=workitem.name}"></span></div>
 	</div>
