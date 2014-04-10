@@ -87,6 +87,12 @@ nav {
   .tylerlogo {
     margin:0 auto;
     padding-top: 5px;
+    -webkit-transition:all .25s;
+    -webkit-transform:scale(.8);
+
+    &:hover {
+      -webkit-transform:scale(.93) rotate(-4deg);
+    }
   }
 
   .row {text-align: center;}
@@ -677,37 +683,29 @@ text-align: left;
       height: 400px;
     }
 
-    h3 {
-      float:left;
-      text-align: center;
-      margin: 0;
-      font-size: 14px;
-      display: inline-block;
-      padding: 10px;
-      width: 25%;
-
-      &.client {
-        background: #1C688B;
-      }
-
-      &.problem {
-        background: #2182B9;
-      }
-
-      &.solution {
-        background:#219FE6;
-      }
-
-      &.skills{
-        background:#1EABBE;
-      }
+    .work-slide-container {
+      position: relative;
+      background:#efefef;
+      height: 90%;
+      color:#010101;
     }
 
-    p {
-      float: right;
-      width: 70%;
-      padding-right: 10px;
-      margin: 0 0 15px 0;
+    .item-nav {
+      border-top: 1px solid teal;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: #609AA2;
+      height: 50px;
+
+      .nav-item {
+        border-left:1px solid #dddddd;
+        height: 100%;
+
+        span {
+          padding-top:10px;
+        }
+      }
     }
   }
 }

@@ -13,25 +13,17 @@
 		<div class="work-cta"><span ng-class="{'glyphicon':true, 'glyphicon-minus': displaythis === workitem.name, 'glyphicon-plus':displaythis!=workitem.name}"></span></div>
 	</div>
 	<div ng-class="{'work-body':true, 'displaythis' : displaythis === workitem.name}">
-		<h3 class="client">Client</h3>
-		<p class="client">{{workitem.client}}</p>
-		<div class="clearfix"></div>
-
-		<h3 class="problem">Problem</h3>
-		<p class="problem">{{workitem.problem}}</p>
-		<div class="clearfix"></div>
-
-		<h3 class="solution">Solution</h3>
-		<p class="solution">{{workitem.solution}}</p>
-		<div class="clearfix"></div>
-
-		<h3 class="skills">Technology</h3>
-		<p class="skills">
-			<span ng-repeat="skill in workitem.skills">
-				{{skill}}
-			</span>
-		</p>
-		<div class="clearfix"></div>
-
+		<div class="work-slide-container">
+			<div class="slide">1</div>
+			<div class="slide">2</div>
+			<div class="slide">3</div>
+			
+		</div>
+		<div class="item-nav row center">
+			<div class="col-xs-3 nav-item"><span class="glyphicon glyphicon-plus-sign"></span></div>
+			<div class="col-xs-6 nav-item"><span class="glyphicon glyphicon-globe"></span></div>
+			<div class="col-xs-3 nav-item"><span class="glyphicon glyphicon-globe"></span></div>
+		</div>
 	</div>
+
 </div>
